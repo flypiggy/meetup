@@ -1,0 +1,10 @@
+<h2>Welcome to your first app!</h2>
+<% puts x = @post %>
+<% puts x %>
+<% @post.each do |post| %>
+  <div class="row">
+    <div class="span9">
+      <h3><% post.title %></h3>
+    </div>
+  </div>
+<% end %>
