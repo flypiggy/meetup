@@ -1,7 +1,7 @@
 <ul>
   <% @posts.each do |post| %>
     <div class="span9">
-      <li><a href= "<%= post.url%>"> <%= post.title %> </a></li>
+      <li><%= link_to post.title, post_path(post.id) %></li>
       <div class="span5">
         <%= pluralize post.comments.count, 'comment' %>
       </div>

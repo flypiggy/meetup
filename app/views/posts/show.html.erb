@@ -1,0 +1,12 @@
+<ul>
+  <div class="span9">
+    <li><a href="<%= @post.url %>"> <%= @post.title %> </a></li>
+    <div class="span5">
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <li> <%= comment.content %> </li>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</ul>
