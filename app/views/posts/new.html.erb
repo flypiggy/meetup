@@ -1,0 +1,8 @@
+Create a new post!
+<%= form_for @post do |f| %>
+  <%= f.label "post title" %>
+  <%= f.text_field :title %>
+  <%= f.label "post url" %>
+  <%= f.text_field :url %>
+  <%= f.submit "save!" %>
+<% end %>
