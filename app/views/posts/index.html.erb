@@ -1,5 +1,11 @@
+<h2> Create a new post <a href = "/posts/new"> here </a></h2>
 <ul>
   <% @posts.each do |post| %>
-    <li><a href= "<%= post.url%>"> <%= post.title %> </a></li>
+    <div class="span9">
+      <li><%= link_to post.title, post_path(post.id) %></li>
+      <div class="span5">
+        <%= pluralize post.comments.count, 'comment' %>
+      </div>
+    </div>
   <% end %>
 </ul>
