@@ -1,6 +1,6 @@
 CourseProject::Application.routes.draw do
   root to: "posts#index"
-  resources :posts do
-    resources :comments, :only=>[:new, :create]
+  resources :posts, only: [:new, :create, :show] do
+    resources :comments, only: [:create]
   end
 end
