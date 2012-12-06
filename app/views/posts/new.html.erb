@@ -1,8 +1,9 @@
 Create a new post!
-<%= form_for @post do |f| %>
-  <%= f.label "post title" %>
-  <%= f.text_field :title %>
-  <%= f.label "post url" %>
-  <%= f.text_field :url %>
-  <%= f.submit "save!" %>
+<%= form_tag controller: "posts", action: "create", method: "post" do |f| %>
+  <%= label_tag :title, "Post_title" %>
+  <%= text_field_tag :title %>
+  <%= label_tag :title, "Post_url" %>
+  <%= url_field_tag :url %>
+  <br>
+  <%= submit_tag "Go!" %>
 <% end %>

@@ -1,11 +1,11 @@
 <h2><a href="<%= @post.url %>"> <%= @post.title %> </a></h2>
 
 <p>
-  <%= form_for([@post, @comment]) do |f| %>
-    <h4>Say something ...</h4>
-    <%= f.text_area :content, :rows => "3" %>
+  <h3> Say something... </h3>
+  <%= form_tag post_comments_path(@post), method: "post" do |f| %>
+    <%= text_area_tag :content, nil, rows: 2 %>
     <br>
-    <%= f.submit "submit" %>
+    <%= submit_tag "Submit!" %>
   <% end %>
 </p>
 
