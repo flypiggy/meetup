@@ -16,4 +16,5 @@ class PostsController < ApplicationController
     Post.create title: params[:title], url: params[:url]
     redirect_to root_path
   end
+
 end
