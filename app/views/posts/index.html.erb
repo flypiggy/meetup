@@ -1,7 +1,8 @@
-<h3> Create a new post <a href = "/posts/new"> here </a></h3>
+<h3>Most popular posts</h3>
 <ul>
   <% @posts.each do |post| %>
-    <li><%= link_to post.title, post.url %></li>
-    (There is <%= link_to pluralize(post.comments.count, 'comment'), post %>)
-  <% end %>
+    <li><%= link_to post.title, post.url %>
+    ( <%= link_to pluralize(post.comments.count, 'comment'), post %> )
+  </li>
+<% end %>
 </ul>

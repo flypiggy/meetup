@@ -20,18 +20,21 @@
       </nav>
     </header>
     <div id="main" role="main">
-      <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span9">
+            <div class="well">
               <%= render 'layouts/messages' %>
               <%= yield %>
             </div>
           </div>
-          <footer>
-          </footer>
+          <div class="span3">
+            <%= render 'layouts/sidebar' %>
+          </div>
         </div>
       </div> <!--! end of .container -->
+      <footer>
+      </footer>
     </div> <!--! end of #main -->
   </body>
 </html>
