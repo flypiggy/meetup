@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find params[:id]
     @comments = @post.comments
-    @comment = Comment.new
   end
 
   def new
@@ -14,7 +13,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create params[:post]
-    redirect_to root_path
+    @post = Post.new params[:post]
+
+    if @post.save
+      flash[:notice] = "Your post successed."
+      redirect_to root_path
+    else
+      flash[:error] = "Title & Url can't be blank."
+      render :new
+    end
   end
 end
