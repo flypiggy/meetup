@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20121213154257) do
 
   create_table "votes", :force => true do |t|
     t.string   "vote_action"
+    t.integer  "post_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

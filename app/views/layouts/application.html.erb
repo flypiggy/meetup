@@ -21,16 +21,9 @@
     </header>
     <div id="main" role="main">
       <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span9">
-            <div class="well">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
-          </div>
-          <div class="span3">
-            <%= render 'layouts/sidebar' %>
-          </div>
+        <div class="well">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
         </div>
       </div> <!--! end of .container -->
       <footer>

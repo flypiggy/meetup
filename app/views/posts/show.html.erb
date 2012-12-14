@@ -1,4 +1,6 @@
 <h2><a href="<%= @post.url %>"> <%= @post.title %> </a></h2>
+<br>
+<legend>  <%= handle_url @post.url %> </legend>
 
 <p>
   <%= form_tag post_comments_path(@post) do |f| %>
