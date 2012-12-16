@@ -5,9 +5,8 @@ gem 'bootstrap-sass'
 gem 'thin'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-group :development do
-  gem 'sqlite3'
-end
+gem 'sqlite3'
+gem 'bcrypt-ruby'
 
 group :production do
   gem 'pg'
