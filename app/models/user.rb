@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   attr_accessible :username, :password
   validates :username, presence: true, uniqueness: true
+
+  has_many :posts
+  has_many :comments
+  has_many :votes
+
   has_secure_password
 
   def self.auth_user (username, password)

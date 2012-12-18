@@ -2,6 +2,7 @@
 <br>
 <legend>  <%= handle_url @post.url %> </legend>
 
+<% if logged? %>
 <p>
   <%= form_tag post_comments_path(@post) do |f| %>
     <h4>Say something ...</h4>
@@ -9,6 +10,7 @@
     <%= submit_tag "submit", class: "btn btn-block btn-success" %>
   <% end %>
 </p>
+<% end %>
 
 <p>
   <ul>
@@ -16,7 +18,7 @@
       There is no comments now.
     <% else %>
       <% @comments.each do |comment| %>
-        <li> <%= comment.content %> </li>
+        <li> <%= "#{comment.user.username} said: #{comment.content}" %></li>
       <% end %>
     <% end %>
   </ul>

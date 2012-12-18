@@ -9,5 +9,9 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+  def require_logged_in
+    redirect_to login_path, alert: "require login" unless logged?
+  end
+
   helper_method :current_user, :logged?
 end

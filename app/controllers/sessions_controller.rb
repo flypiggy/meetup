@@ -15,7 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:token] = nil
-    p session
     redirect_to root_path
   end
 
