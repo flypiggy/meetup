@@ -17,8 +17,8 @@ group :development do
 end
 
 
-gem 'execjs'
 gem 'therubyracer'
+gem 'libv8'
 
 
 # Gems used only for assets and not required
