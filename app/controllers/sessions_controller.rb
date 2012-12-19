@@ -1,15 +1,13 @@
 class SessionsController < ApplicationController
 
   def new
-    @user = User.new
   end
 
   def create
-    if token = User.auth_user(params[:username], params[:password])
-      session[:token] = token
+    if session[:token] = User.auth_user(params[:username], params[:password])
       redirect_to root_path, notice: "welcome back!"
     else
-      render :new, error: "wrong!"
+      redirect_to login_path, alert: "Wrong Username or Password"
     end
   end
 

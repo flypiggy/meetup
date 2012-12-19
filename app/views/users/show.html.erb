@@ -1,0 +1,19 @@
+<h1> <%= @user.username %> </h1>
+<h3> recent posts </h3>
+<ul>
+  <% @recent_posts.each do |f| %>
+    <li><%= f.title %></li>
+  <% end %>
+</ul>
+<h3> recent comments </h3>
+<ul>
+  <% @recent_comments.each do |f| %>
+    <li><%= f.content %></li>
+  <% end %>
+</ul>
+<h3> recent votes</h3>
+<ul>
+  <% @recent_votes.each do |f| %>
+    <li><%= f.vote_action %></li>
+  <% end %>
+</ul>

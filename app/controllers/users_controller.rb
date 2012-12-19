@@ -7,12 +7,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new params[:user]
     if @user.save
-      flash[:notice] = "Create success!  #{@user.username}"
-      redirect_to root_path
+      redirect_to root_path, notice: "Create success!  #{@user.username}"
     else
       flash[:error] = "Wrong input"
       render :new
     end
+  end
 
+  def show
+    @user = User.find params[:id]
+    @recent_posts = @user.posts.order("updated_at DESC").limit(10)
+    @recent_comments = @user.comments.order("updated_at DESC").limit(10)
+    @recent_votes = @user.votes.order("updated_at DESC").limit(10)
   end
 end
