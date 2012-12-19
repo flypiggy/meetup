@@ -7,13 +7,13 @@ gem 'thin'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :production do
-    gem 'pg'
+  gem 'pg'
 end
 
 
 
 group :development do
-    gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 
