@@ -14,7 +14,7 @@
             <div id="post">
               <%= link_to post.title, handle_url(post.url) %>
               <br>
-              submitted by <%= post.user.username %>
+              submitted by <%= link_to post.user.username, post.user %>
               ( <%= link_to pluralize(post.comments.count, 'comment'), post %> )
             </div>
           </div>
