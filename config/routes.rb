@@ -1,7 +1,7 @@
 CourseProject::Application.routes.draw do
   root to: "posts#index"
 
-  resources :users, only:[:create, :show, :edit]
+  resources :users, only:[:create, :show, :edit, :update]
   get "register", to: "users#new", as: "register"
 
   get "login", to: "sessions#new", as: "login"

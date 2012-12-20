@@ -17,9 +17,12 @@
     <li><%= f.vote_action %></li>
   <% end %>
 </ul>
-<h3> recent tweets</h3>
-<ul>
-  <% @recent_tweets.each do |t| %>
-    <li><%= t.text %></li>
-  <% end %>
-</ul>
+<% if @recent_tweets %>
+  <h3> recent tweets</h3>
+  <ul>
+    <% @recent_tweets.each do |t| %>
+      <li><%= t.text %></li>
+    <% end %>
+  </ul>
+<% end %>
+

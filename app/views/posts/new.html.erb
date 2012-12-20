@@ -4,5 +4,7 @@
   <%= f.text_field :title %>
   <%= f.label "post url" %>
   <%= f.text_field :url %>
+  <%= f.label "chose a node" %>
+  <%= collection_select(:post, :node_id, Node.all, :id, :name) %>
   <%= f.submit "create", class: "btn btn-block btn-success" %>
 <% end %>

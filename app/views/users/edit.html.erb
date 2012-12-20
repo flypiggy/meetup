@@ -1,0 +1,9 @@
+<%= form_for @user do |f| %>
+  <%= f.label @user.username %>
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+  <label> twitter </label>
+  <%= f.text_field :twitter %>
+  <%= f.submit %>
+<% end %>
+

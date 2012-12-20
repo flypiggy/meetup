@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :username, :password, :token
+  attr_accessible :username, :password, :token, :twitter
   validates :username, presence: true, uniqueness: true
   validates :token, uniqueness: true
 
@@ -8,13 +8,6 @@ class User < ActiveRecord::Base
   has_many :votes
 
   has_secure_password
-
-  def user_recent_action action
-    self.action.order "updated_at DESC"
-  end
-
-
-
 
   def self.auth_user (username, password)
     user = User.find_by_username(username).try(:authenticate, password)
