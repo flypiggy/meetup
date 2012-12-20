@@ -19,6 +19,7 @@ end
 
 gem 'therubyracer'
 gem 'libv8'
+gem 'twitter'
 
 
 # Gems used only for assets and not required

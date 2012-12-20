@@ -19,5 +19,6 @@ class UsersController < ApplicationController
     @recent_posts = @user.posts.order("updated_at DESC").limit(10)
     @recent_comments = @user.comments.order("updated_at DESC").limit(10)
     @recent_votes = @user.votes.order("updated_at DESC").limit(10)
+    @recent_tweets = Twitter.user_timeline "flypiggys", count: 10
   end
 end
